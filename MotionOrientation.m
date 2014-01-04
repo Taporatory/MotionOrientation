@@ -207,10 +207,12 @@ NSString* const kMotionOrientationKey = @"kMotionOrientationKey";
                                                             object:nil 
                                                           userInfo:[NSDictionary dictionaryWithObjectsAndKeys:self, kMotionOrientationKey, nil]];
         if ( self.showDebugLog ) {
+#ifdef DEBUG
             NSLog(@"didAccelerate: absoluteZ: %f angle: %f (x: %f, y: %f, z: %f), orientationString: %@",
                   absoluteZ, angle, 
                   acceleration.x, acceleration.y, acceleration.z, 
                   orientationString);
+#endif
         }
     }
     if ( interfaceOrientationChanged ) {
